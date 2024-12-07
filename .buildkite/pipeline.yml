@@ -15,6 +15,6 @@ steps:
     key: deploy
     depends_on: test
 
-  - trigger: the-triggered-one
+  - trigger: "the-triggered-one"
     label: ":rocket: Deploy event trigger"
     branches: master
