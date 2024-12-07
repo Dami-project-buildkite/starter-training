@@ -14,6 +14,7 @@ steps:
       cat .buildkite/annotation.md | buildkite-agent annotate --style "success"
     key: deploy
     depends_on: test
-    trigger: "dami-buildkite/the-triggered-one"
+    
+  - trigger: "dami-buildkite/the-triggered-one"
     label: ":rocket: Deploy event trigger"
     branches: master
