@@ -17,4 +17,4 @@ steps:
     
   - trigger: "dami-buildkite/the-triggered-one"
     label: ":rocket: Deploy event trigger"
-    branches: master
+    branches: main
