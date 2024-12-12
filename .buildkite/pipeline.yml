@@ -1,5 +1,5 @@
   - label: annotate
-      plugins:
+    plugins:
       - bugcrowd/test-summary#v1.8.0:
           inputs:
             - label: rspec
