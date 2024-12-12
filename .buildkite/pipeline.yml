@@ -1,3 +1,4 @@
+Steps:
 - label: ":docker: configure image tag"
     key: tag:create
     commands:
