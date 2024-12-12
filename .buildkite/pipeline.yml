@@ -1,20 +1,12 @@
 steps:
-  - label: ":construction_worker: Build"
-    command: echo "Build the rocket"
-    key: build
+  - label: annotate
+       plugins: 
+         - bugcrowd/test-summary#v1.8.0:
+             inputs:
+               - label: rspec
+                 artifact_path: aetifacts/rspec*
+                 type: junit
+             Formatter:
+               Type:details
+             context: test-summary
 
-  - label: ":white_check_mark: Test"
-    command: echo "Test the rocket"
-    key: test
-    depends_on: build
-
-  - label: ":rocket: Deploy"
-    command: |
-      echo "Launch the rocket"
-      cat .buildkite/annotation.md | buildkite-agent annotate --style "success"
-    key: deploy
-    depends_on: test
-    
-  - trigger: "the-triggered-one"
-    label: ":rocket: Deploy event trigger"
-    branches: main
